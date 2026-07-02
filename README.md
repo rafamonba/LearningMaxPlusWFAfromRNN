@@ -39,10 +39,10 @@ The complete execution environment for this application is contained within a si
    * A set of models with the prefix `WFA_*.pkl` used to evaluate different equivalence query resolution strategies.
    * The high-precision discrete models used to answer the final clinical queries (`NWFA_651states.pkl`, `DWFA_323states.pkl`).
 2. Open and run **`RealWorldApplication_OhioT1DM.ipynb`**. 
-3. **Equivalence Query Strategy Comparison:** The second section of the notebook loads the `WFA_*.pkl` files to evaluate the empirical predictive accuracy (MAE) of models extracted under different equivalence query methods (Exhaustive vs. Abstraction-based). It computes errors against a naive sequence-length baseline and plots the performance degradation curves over extended horizons.
+3. **Equivalence Query Strategy Comparison:** The second section of the notebook loads the specific evaluation models (`WFA_Abstraction_Big.pkl`, `WFA_Abstraction_Small.pkl`, `WFA_Exhaustive_Big.pkl`, and `WFA_Exhaustive_Small.pkl`) to evaluate the empirical predictive accuracy (MAE) of models extracted under different equivalence query methods (Exhaustive vs. Abstraction-based). It computes errors against a naive sequence-length baseline and plots the performance degradation curves over extended horizons.
 4. **Solving Clinical Queries:** The middle section loads the pre-extracted optimal WFAs and the continuous RNN to directly compute and answer three categories of clinical queries:
    * *Unconstrained Extrema* (Longest and Shortest-path DAG algorithms).
-   * *Constrained Optimization* (Cartesian intersection with structural DFAs).
+   * *Constrained Optimization* (Longest and Shortest-path DAG algorithms with additional restrictions in        the intersected DFAs).
    * *Targeted Intervals* (Integer-bounded Dynamic Programming for exact physiological ranges).
 5. **Active Learning Extraction:** At the bottom of the notebook, you will find the L* active learning code blocks for both non-deterministic and deterministic extractions. With the appropriate combination of configuration parameters (truncation horizons, dynamic tolerances, and quantization steps), these blocks should allow to extract the exact WFAs provided in the zip file from scratch.
 
