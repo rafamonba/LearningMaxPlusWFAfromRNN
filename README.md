@@ -34,7 +34,7 @@ While the RNN predicts glucose variation, resolving inverse clinical queries (e.
 
 The complete execution environment for this application is contained within a single notebook. To run it:
 
-1. Locate the **`WFA&RNNs`** compressed folder in the repository and extract its contents into your working directory. This folder contains:
+1. Locate the **`WFA&RNNs.zip`** compressed folder in the repository and extract its contents into your working directory. This folder contains:
    * The continuous PyTorch oracle (`rnn_OhioT1DM.pth`, `vocabulary_OhioT1DM.json`).
    * A set of models with the prefix `WFA_*.pkl` used to evaluate different equivalence query resolution strategies.
    * The high-precision discrete models used to answer the final clinical queries (`NWFA_651states.pkl`, `DWFA_323states.pkl`).
